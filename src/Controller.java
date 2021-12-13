@@ -45,6 +45,8 @@ public class Controller implements Runnable{
         frameNative.setVisible(true);
         frameNative.requestFocus();
 
+        model.createGoodBoy(100, 100);
+
         viewNative.addMouseMotionListener(new MML());
         viewNative.addMouseListener(new ML());
     }
@@ -130,7 +132,7 @@ public class Controller implements Runnable{
             }
 
             while (deltaFPS >= 1) {
-                viewNative.render();
+                viewNative.render(width, height, scale, model.getTheGoodBoys());
                 //viewSprite.render();
                 frames++;
                 deltaFPS--;

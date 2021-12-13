@@ -4,6 +4,8 @@ import java.awt.image.BufferedImage;
 import java.awt.image.DataBufferInt;
 import java.util.ArrayList;
 
+import SimulationModel.goodBoy;
+
 public class Renderer extends Canvas {
     private int WIDTH;
     private int HEIGTH;
@@ -22,7 +24,7 @@ public class Renderer extends Canvas {
         setPreferredSize(new Dimension(WIDTH, HEIGTH));
     }
 
-    public void render() {
+    public void render(int widht, int height, int scale, ArrayList<goodBoy> goodBoys) {
         BufferStrategy bs = getBufferStrategy();
         if (bs == null) {
             createBufferStrategy(3);
@@ -35,7 +37,10 @@ public class Renderer extends Canvas {
         g.fillRect(0, 0, WIDTH, HEIGTH);
 
         g.setColor(Color.white);
-        g.fillRect(200, 200, 50, 50);
+        for (int i = 0; i < goodBoys.size(); i++) {
+            g.fillRect(goodBoys.get(i).getX()*scale, goodBoys.get(i).getY()*scale, scale, scale);
+        }
+
 
         g.dispose();
         bs.show();

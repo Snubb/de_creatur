@@ -9,6 +9,7 @@ import java.util.ArrayList;
  * @author Magnus Silverdal
  */
 public class SimulationModel {
+    private ArrayList<goodBoy> theGoodBoys = new ArrayList<>();
 
     public SimulationModel() {
 
@@ -18,5 +19,11 @@ public class SimulationModel {
 
     }
 
+    public void createGoodBoy(int x, int y) {
+        theGoodBoys.add(new goodBoy(x, y));
+    }
 
+    public ArrayList<goodBoy> getTheGoodBoys() {
+        return theGoodBoys;
+    }
 }
