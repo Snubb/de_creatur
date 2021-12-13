@@ -1,5 +1,6 @@
 package SimulationModel;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -10,6 +11,7 @@ import java.util.ArrayList;
  */
 public class SimulationModel {
     private ArrayList<goodBoy> theGoodBoys = new ArrayList<>();
+    private ArrayList<food> yummyFood = new ArrayList<>();
 
     public SimulationModel() {
 
@@ -24,8 +26,14 @@ public class SimulationModel {
     public void createGoodBoy(int x, int y) {
         theGoodBoys.add(new goodBoy(x, y));
     }
+    public void createFood(int x, int y) {
+        yummyFood.add(new food(x, y));
+    }
 
     public ArrayList<goodBoy> getTheGoodBoys() {
         return theGoodBoys;
+    }
+    public ArrayList<food> getYummyFood() {
+        return yummyFood;
     }
 }

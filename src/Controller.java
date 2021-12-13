@@ -17,7 +17,7 @@ public class Controller implements Runnable{
     private int ups = 30;
     private int width = 1200;
     private int height = 600;
-    private int scale = 2;
+    private int scale = 10;
     private JFrame frameNative;
     //private JFrame frameSprite;
     private String title = "";
@@ -65,7 +65,7 @@ public class Controller implements Runnable{
 
         @Override
         public void mouseClicked(MouseEvent mouseEvent) {
-
+            model.createFood(mouse.x, mouse.y);
         }
 
         @Override
@@ -132,7 +132,7 @@ public class Controller implements Runnable{
             }
 
             while (deltaFPS >= 1) {
-                viewNative.render(width, height, scale, model.getTheGoodBoys());
+                viewNative.render(width, height, scale, model.getTheGoodBoys(), model.getYummyFood());
                 //viewSprite.render();
                 frames++;
                 deltaFPS--;
