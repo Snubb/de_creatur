@@ -19,7 +19,7 @@ public class SimulationModel {
 
     public void update() {
         for (int i = 0; i < theGoodBoys.size(); i++) {
-            theGoodBoys.get(i).move();
+            theGoodBoys.get(i).move(yummyFood);
         }
     }
 
